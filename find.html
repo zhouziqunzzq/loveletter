@@ -32,7 +32,7 @@
         <div class="row">
             <div id="question1" class="col-md-12 text-center questionText">
                 <img src="img/1/0.jpg" class="box-shadow-1">
-                <h1> 1.请点击下列图片中与上图最相关的图片：</h1>
+                <h1> 1.请点击下列图片中与上图最天生一对的图片：</h1>
                 <div class="row">
                     <div class="col-md-3"><img id="q11" src="img/1/1.jpg" class="img-responsive box-shadow-1 answerBox" onclick="checkQ1(this)" style="cursor: pointer"></div>
                     <div class="col-md-3"><img id="q12" src="img/1/2.jpg" class="img-responsive box-shadow-1 answerBox" onclick="checkQ1(this)" style="cursor: pointer"></div>
@@ -44,13 +44,45 @@
         <div class="row">
             <div id="question2" class="col-md-12 text-center questionText">
                 <img src="img/2/0.jpg" class="box-shadow-1">
-                <h1> 2.请点击下列图片中与上图最相关的图片：</h1>
+                <h1> 2.请点击下列图片中与上图最天生一对的图片：</h1>
                 <div class="row">
                     <div class="col-md-3"><img id="q21" src="img/2/1.jpg" class="img-responsive box-shadow-1 answerBox" onclick="checkQ2(this)" style="cursor: pointer"></div>
                     <div class="col-md-3"><img id="q22" src="img/2/2.jpg" class="img-responsive box-shadow-1 answerBox" onclick="checkQ2(this)" style="cursor: pointer"></div>
                     <div class="col-md-3"><img id="q23" src="img/2/3.jpg" class="img-responsive box-shadow-1 answerBox" onclick="checkQ2(this)" style="cursor: pointer"></div>
                     <div class="col-md-3"><img id="q24" src="img/2/4.jpg" class="img-responsive box-shadow-1 answerBox" onclick="checkQ2(this)" style="cursor: pointer"></div>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="question3" class="col-md-12 text-center questionText">
+                <img src="img/3/0.jpg" class="box-shadow-1">
+                <h1> 3.请点击下列图片中与上图最天生一对的图片：</h1>
+                <div class="row">
+                    <div class="col-md-3"><img id="q31" src="img/3/1.jpg" class="img-responsive box-shadow-1 answerBox" onclick="checkQ3(this)" style="cursor: pointer"></div>
+                    <div class="col-md-3"><img id="q32" src="img/3/2.jpg" class="img-responsive box-shadow-1 answerBox" onclick="checkQ3(this)" style="cursor: pointer"></div>
+                    <div class="col-md-3"><img id="q33" src="img/3/3.jpg" class="img-responsive box-shadow-1 answerBox" onclick="checkQ3(this)" style="cursor: pointer"></div>
+                    <div class="col-md-3"><img id="q34" src="img/3/4.jpg" class="img-responsive box-shadow-1 answerBox" onclick="checkQ3(this)" style="cursor: pointer"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="question4" class="col-md-12 text-center questionText">
+                <img src="img/4/0.jpg" class="box-shadow-1">
+                <h1> 4.请点击下列图片中与上图最天生一对的图片：</h1>
+                <div class="row">
+                    <div class="col-md-3"><img id="q41" src="img/4/1.jpg" class="img-responsive box-shadow-1 answerBox" onclick="checkQ4(this)" style="cursor: pointer"></div>
+                    <div class="col-md-3"><img id="q42" src="img/4/2.jpg" class="img-responsive box-shadow-1 answerBox" onclick="checkQ4(this)" style="cursor: pointer"></div>
+                    <div class="col-md-3"><img id="q43" src="img/4/3.jpg" class="img-responsive box-shadow-1 answerBox" onclick="checkQ4(this)" style="cursor: pointer"></div>
+                    <div class="col-md-3"><img id="q44" src="img/4/4.jpg" class="img-responsive box-shadow-1 answerBox" onclick="checkQ4(this)" style="cursor: pointer"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="question5" class="col-md-12 text-center questionText">
+                <img src="img/5/0.jpg" class="box-shadow-1">
+                <h1> 5.请点击下列图片中与上图最天生一对的图片：</h1>
+                <div class="row">
+                    <div class="col-md-12"><img id="q51" src="img/5/1.jpg" class="img-responsive center-block box-shadow-1 answerBox" onclick="checkQ5(this)" style="cursor: pointer"></div>                </div>
             </div>
         </div>
     </div>
@@ -72,10 +104,31 @@
                 $("#question2").css("display", "block");
             }, 500);
         }
-        function showHint(){
+        function showQuestion3(){
             $("#question2").animate({opacity:"0"},500);
             setTimeout(function () {
                 $("#question2").css("display", "none");
+                $("#question3").css("display", "block");
+            }, 500);
+        }
+        function showQuestion4(){
+            $("#question3").animate({opacity:"0"},500);
+            setTimeout(function () {
+                $("#question3").css("display", "none");
+                $("#question4").css("display", "block");
+            }, 500);
+        }
+        function showQuestion5(){
+            $("#question4").animate({opacity:"0"},500);
+            setTimeout(function () {
+                $("#question4").css("display", "none");
+                $("#question5").css("display", "block");
+            }, 500);
+        }
+        function showHint(){
+            $("#question4").animate({opacity:"0"},500);
+            setTimeout(function () {
+                $("#question5").css("display", "none");
                 $("#findText").css("display", "block");
                 $("#findText").css("opacity", "1");
                 $("#hintText").css("display", "block");
@@ -96,6 +149,45 @@
         }
         function checkQ2(choice) {
             if(choice.id == "q23")
+            {
+                showQuestion3();
+            }
+            else
+            {
+                $("#" + choice.id).animate({opacity:"0"},500);
+                setTimeout(function () {
+                    $("#" + choice.id).css("display", "none");
+                }, 500)
+            }
+        }
+        function checkQ3(choice) {
+            if(choice.id == "q34")
+            {
+                showQuestion4();
+            }
+            else
+            {
+                $("#" + choice.id).animate({opacity:"0"},500);
+                setTimeout(function () {
+                    $("#" + choice.id).css("display", "none");
+                }, 500)
+            }
+        }
+        function checkQ4(choice) {
+            if(choice.id == "q41")
+            {
+                showQuestion5();
+            }
+            else
+            {
+                $("#" + choice.id).animate({opacity:"0"},500);
+                setTimeout(function () {
+                    $("#" + choice.id).css("display", "none");
+                }, 500)
+            }
+        }
+        function checkQ5(choice) {
+            if(choice.id == "q51")
             {
                 showHint();
             }
