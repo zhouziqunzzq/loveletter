@@ -1,0 +1,112 @@
+body {
+    padding-top: 50px;
+    background-image: url("../img/papper.jpg");
+}
+.starter-template {
+    /*padding: 20px 15px;*/
+    text-align: left;
+}
+.findText {
+    font-family: "Microsoft YaHei UI";
+    font-size: 30px;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 1s;
+}
+.hintText {
+    font-family: "Microsoft YaHei UI";
+    font-size: 30px;
+    display: none;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 1s;
+}
+.questionText {
+    font-family: "Microsoft YaHei UI";
+    font-size: 30px;
+    display: none;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 1s;
+}
+.box-shadow-1{
+    -webkit-box-shadow: 3px 3px 3px;
+    -moz-box-shadow: 3px 3px 3px;
+    box-shadow: 3px 3px 3px;
+}
+.answerBox:hover {
+    -webkit-animation-name: upAndDown;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-play-state: running;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+.fadeInBox{
+    opacity: 1;
+    margin-top: 0;
+    -webkit-animation-name: fadeIn; /*动画名称*/
+    -webkit-animation-duration: 3s; /*动画持续时间*/
+    -webkit-animation-iteration-count: 1; /*动画次数*/
+    -webkit-animation-delay: 0s; /*延迟时间*/
+    -webkit-animation-timing-function: ease;
+}
+.fadeInBox:hover{
+    -webkit-animation-name: upAndDown;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-play-state: running;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes fadeIn{
+    0% {
+        opacity: 0; /*初始状态 透明度为0*/
+        margin-top: 30px;
+    }
+    100% {
+        opacity: 1; /*结尾状态 透明度为1*/
+        margin-top: 0px;
+    }
+}
+@-webkit-keyframes upAndDown{
+    0% {
+        margin-top: 0px;
+    }
+    50% {
+        margin-top: 20px;
+    }
+    100% {
+        margin-top: 0px;
+    }
+}
+@-webkit-keyframes dropDownFadeIn{
+    0% {
+        opacity: 0; /*初始状态 透明度为0*/
+        margin-top: 0;
+    }
+    100% {
+        opacity: 1; /*结尾状态 透明度为1*/
+        margin-top: 50%;
+    }
+}
+@-webkit-keyframes riseUpFadeIn{
+    0% {
+        opacity: 0; /*初始状态 透明度为0*/
+        margin-top: 50%;
+    }
+    100% {
+        opacity: 1; /*结尾状态 透明度为1*/
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/letter.css" rel="stylesheet">
+    <title>不二情书</title>
+</head>
+<body>
+    <div id="mainDiv" class="container">
+        <div id="loveHeart" class="loveHeart">
+            <canvas id="garden"></canvas>
+        </div>
+        <div class="row">
+            <div id="codeLetter" class="col-md-4 loveYouBox">
+                <div class="starter-template" style="font-family: Consolas; font-size: 14px;">
+                    <p><span id="typeelem" style="white-space: pre"></span></p>
+                    <span id="fadeInImg"></span>
+                </div>
+            </div>
+            <div id="qrCode" class="col-md-4">
+                <img id="qrCodeImg" src="img/qr.png" class="img-responsive  qrCodeBox"/>
+            </div>
+            <div id="loveYou" class="col-md-4 loveYouBox" style="font-family: 'Microsoft YaHei UI';
+                    font-size: 14px; text-align: center;">
+                <p>
+                    我爱你<br/>
+                    爱してる<br/>
+                    사랑해요<br/>
+                    Ti amo<br/>
+                    Je t'ame<br/>
+                    Ich liebe dich<br/>
+                    Taim i'ngra leat<br/>
+                    Mina rakastan sinua<br/>
+                    Te amo/ vos amo<br/>
+                    Ik hou van jou<br/>
+                    Jeg elsker dig<br/>
+                    Te tu be besc<br/>
+                    Я тебя люблю<br/>
+                    Я тебя кхаю<br/>
+                    Mi amas vin<br/>
+                    Nga khyed la dgav<br/>
+                    Ah loove ye<br/>
+                    Bi shimbe hairambi<br/>
+                    Ani Ohev Otach<br/>
+                    Me do wo<br/>
+                    Saya citamu<br/>
+                    Би чамд хайртаи<br/>
+                    Àmi tomàke bhàlobàshi<br/>
+                    eu amo-te<br/>
+                    lingo gramo<br/>
+                    tave myliu<br/>
+                    te sakam<br/>
+                    men seni sevirem<br/>
+                    ami to may halobashi<br/>
+                    kocham cie<br/>
+                    te tu be besc<br/>
+                    vivian<br/>
+                    inhobbok<br/>
+                    volim te<br/>
+                    chit pade<br/>
+                    āmi tomāke bhālobāshi<br/>
+                    bong salang oun<br/>
+                    mahal kita<br/>
+                    saja kasih savdari<br/>
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/typed.js"></script>
+    <script>
+        $(function(){
+            $("#typeelem").typed({
+                strings: ["while(my heart was still beating)\n//在我的心脏还没有停止跳动的时候\n" +
+                "if(you entered my world)\n//只要你进入了我的世界\n" +
+                "   cout << \"I will always love you!\";\n//我就会永远地爱你^1000\n\n" +
+                "long lovetime;\n//定义一个变量：我们的相爱时间\n" +
+                "if(love == true)\n//如若我们之间是真爱\n" +
+                "for(lovetime=1; lovetime>=1; lovetime++)\n" +
+                "//那么从我们相爱的那一秒起，\n//我们注定将无限循环，执子之手，与子偕老！^1000\n\n" +
+                "if(you.hand == cold && weather == winter)\n//如果冬天里你的手是冰冷的\n" +
+                "   giveyoulove(myhand.temp, yourhand.temp);\n//将我手上的温度全部给予你\n" +
+                "return you.happyface;\n//换取你幸福的脸庞^1000"],
+                contentType: 'text',
+                typeSpeed: 100,
+                cursorChar: "_",
+                callback: function() {
+                    $("#fadeInImg").html('<img src="img/start.png" id="test" class="fadeInBox"' +
+                            ' onclick="fadeOutAndJmp()" style="cursor: pointer">');
+                }
+            });
+        });
+    </script>
+    <script src="js/garden.js"></script>
+    <script src="js/function.js"></script>
+    <script type="text/javascript">
+        function fadeOutAndJmp(){
+            $("#mainDiv").animate({opacity:"0"},500);
+            setTimeout(function() {
+                location.href="find.html";
+            },2000);
+        }
+        $loveHeart = $("#loveHeart");
+        var $qrCode = $("#qrCodeImg");
+        var offsetX = $loveHeart.width() / 2;
+        var offsetY = $loveHeart.height() / 2 - 55;
+
+        if (!document.createElement('canvas').getContext) {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+            document.body.appendChild(msg);
+            $("#code").css("display", "none")
+            document.execCommand("stop");
+        } else {
+            setTimeout(function () {
+                startHeartAnimation();
+            }, 500);
+        }
+    </script>
+</body>
+</html>
